@@ -11,19 +11,60 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
+
+// Define allowed origins - handle both with and without trailing slash
+const allowedOrigins = [
+  process.env.FRONTEND_URL || "https://livestream-lhip.onrender.com",
+  (process.env.FRONTEND_URL || "https://livestream-lhip.onrender.com").replace(/\/$/, ''), // Remove trailing slash
+  (process.env.FRONTEND_URL || "https://livestream-lhip.onrender.com") + '/', // Add trailing slash
+  'http://localhost:3000', // For local development
+  'http://localhost:5173', // For Vite dev server
+  'https://livestream-lhip.onrender.com',
+  'https://livestream-lhip.onrender.com/'
+];
+
 const io = socketIo(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || "https://livestream-lhip.onrender.com",
-    methods: ["GET", "POST"]
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
 // Middleware
-app.use(helmet());
-app.use(cors({
-  origin: process.env.FRONTEND_URL || "https://livestream-lhip.onrender.com",
-  credentials: true
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
+
+// CORS configuration
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, etc.)
+    if (!origin) return callback(null, true);
+    
+    // Check if origin is in allowed origins
+    const isAllowed = allowedOrigins.some(allowedOrigin => {
+      return origin === allowedOrigin || 
+             origin === allowedOrigin.replace(/\/$/, '') || 
+             origin === allowedOrigin + '/';
+    });
+    
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      console.log(`CORS blocked origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+}));
+
+// Handle preflight requests
+app.options('*', cors());
+
 app.use(express.json());
 
 // Rate limiting
@@ -166,6 +207,11 @@ app.get('/api/stream-status', (req, res) => {
 
 app.get('/api/protected', authenticateToken, (req, res) => {
   res.json({ message: 'Protected route accessed', user: req.user });
+});
+
+// Test route to verify CORS
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'CORS test successful', origin: req.headers.origin });
 });
 
 // Socket.io connection handling
@@ -475,4 +521,5 @@ const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🔑 Admin key: ${process.env.ADMIN_KEY || 'admin123'}`);
+  console.log(`🌐 Allowed origins:`, allowedOrigins);
 });
