@@ -13,7 +13,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: process.env.FRONTEND_URL || "https://livestream-lhip.onrender.com",
     methods: ["GET", "POST"]
   }
 });
@@ -21,7 +21,7 @@ const io = socketIo(server, {
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
+  origin: process.env.FRONTEND_URL || "https://livestream-lhip.onrender.com",
   credentials: true
 }));
 app.use(express.json());
