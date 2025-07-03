@@ -1,0 +1,79 @@
+/* Global Reset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Container */
+.LivestreamappContainer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+.LivestreamappHeader {
+  background-color: #2f54eb;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.LivestreamappTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.LivestreamappUserInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.LivestreamappUsername {
+  font-weight: 500;
+}
+
+.LivestreamappLogoutButton {
+  background-color: white;
+  color: #2f54eb;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.LivestreamappLogoutButton:hover {
+  background-color: #1d39c4;
+  color: white;
+  border-color: white;
+}
+
+.LivestreamappStatus {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.LivestreamappStatusConnected {
+  color: #52c41a;
+}
+
+.LivestreamappStatusDisconnected {
+  color: #f5222d;
+}
+
+/* Main */
+.LivestreamappMain {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}

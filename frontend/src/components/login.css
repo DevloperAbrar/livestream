@@ -1,0 +1,99 @@
+.AdminLoginstreamContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.AdminLoginstreamFormBox {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.AdminLoginstreamTitle {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  color: #2f54eb;
+}
+
+.AdminLoginstreamError {
+  color: #ff4d4f;
+  background-color: #fff1f0;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.AdminLoginstreamForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.AdminLoginstreamInputGroup {
+  margin-bottom: 15px;
+}
+
+.AdminLoginstreamInput {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.AdminLoginstreamInput:focus {
+  border-color: #2f54eb;
+  box-shadow: 0 0 3px #2f54eb;
+}
+
+.AdminLoginstreamHint {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.AdminLoginstreamButton {
+  background-color: #2f54eb;
+  color: white;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.AdminLoginstreamButton:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.AdminLoginstreamButton:hover:not(:disabled) {
+  background-color: #1d39c4;
+}
+
+.AdminLoginstreamSwitchText {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.AdminLoginstreamSwitchButton {
+  background: none;
+  border: none;
+  color: #2f54eb;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  margin-left: 5px;
+}

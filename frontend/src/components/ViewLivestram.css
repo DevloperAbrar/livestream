@@ -1,0 +1,89 @@
+.ViewerStreamPanelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.ViewerStreamPanelControls {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: 1px solid #e0e0e0;
+}
+
+.ViewerStreamPanelControls h2 {
+  margin-bottom: 15px;
+  color: #2f54eb;
+}
+
+.ViewerStreamPanelInfo p {
+  margin: 5px 0;
+  color: #444;
+  font-size: 14px;
+}
+
+.ViewerStreamPanelActions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.ViewerStreamPanelJoinBtn,
+.ViewerStreamPanelLeaveBtn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ViewerStreamPanelJoinBtn {
+  background-color: #52c41a;
+  color: white;
+}
+
+.ViewerStreamPanelJoinBtn:hover {
+  background-color: #389e0d;
+}
+
+.ViewerStreamPanelLeaveBtn {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.ViewerStreamPanelLeaveBtn:hover {
+  background-color: #cf1322;
+}
+
+.ViewerStreamPanelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ViewerStreamPanelVideoSection {
+  background-color: #f0f2f5;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.ViewerStreamPanelVideoSection h3 {
+  margin-bottom: 15px;
+  color: #2f54eb;
+}
+
+.ViewerStreamPanelNoStream {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.ViewerStreamPanelChatSection {
+  margin-top: 10px;
+}

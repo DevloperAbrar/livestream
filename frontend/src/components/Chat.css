@@ -1,0 +1,114 @@
+.AdminChatStreamContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.AdminChatStreamTitle {
+  font-size: 20px;
+  color: #2f54eb;
+  margin-bottom: 10px;
+}
+
+.AdminChatStreamMessages {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  max-height: 300px;
+  border: 1px solid #d9d9d9;
+}
+
+.AdminChatStreamNoMessages {
+  text-align: center;
+  color: #999;
+  padding: 20px 0;
+}
+
+.AdminChatStreamMessage {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.AdminChatStreamAdminMessage {
+  border-left: 4px solid #2f54eb;
+}
+
+.AdminChatStreamUserMessage {
+  border-left: 4px solid #52c41a;
+}
+
+.AdminChatStreamMessageHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+.AdminChatStreamUsername {
+  font-weight: 600;
+}
+
+.AdminChatStreamBadge {
+  background-color: #2f54eb;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.AdminChatStreamTimestamp {
+  font-size: 12px;
+  color: #888;
+}
+
+.AdminChatStreamMessageContent {
+  font-size: 15px;
+  color: #333;
+}
+
+.AdminChatStreamInputArea {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.AdminChatStreamInput {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  font-size: 15px;
+  outline: none;
+}
+
+.AdminChatStreamInput:focus {
+  border-color: #2f54eb;
+  box-shadow: 0 0 4px #2f54eb33;
+}
+
+.AdminChatStreamSendButton {
+  padding: 10px 16px;
+  background-color: #2f54eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.AdminChatStreamSendButton:disabled {
+  background-color: #bfbfbf;
+  cursor: not-allowed;
+}
+
+.AdminChatStreamSendButton:hover:not(:disabled) {
+  background-color: #1d39c4;
+}

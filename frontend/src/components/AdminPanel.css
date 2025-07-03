@@ -1,0 +1,87 @@
+.AdminStreamPanelContainer {
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.AdminStreamPanelControls {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.AdminStreamPanelTitle {
+  margin: 0 0 15px;
+  font-size: 24px;
+  color: #2f54eb;
+}
+
+.AdminStreamPanelButtonGroup {
+  margin-bottom: 15px;
+}
+
+.AdminStreamPanelStartBtn,
+.AdminStreamPanelStopBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.AdminStreamPanelStartBtn {
+  background-color: #52c41a;
+  color: white;
+}
+
+.AdminStreamPanelStartBtn:hover {
+  background-color: #389e0d;
+}
+
+.AdminStreamPanelStopBtn {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.AdminStreamPanelStopBtn:hover {
+  background-color: #cf1322;
+}
+
+.AdminStreamPanelInfo p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.AdminStreamPanelContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.AdminStreamPanelVideo,
+.AdminStreamPanelChat {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.AdminStreamPanelVideo h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.AdminStreamPanelVideoPlayer {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 8px;
+  background: #000;
+}
